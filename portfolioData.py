@@ -1,4 +1,6 @@
 # Import Data
+import pandas as pd
+import numpy as np
 #ETF Selected
 #BCOMTR - Bloomberg Commodity Index Total Return
 #LBUSTRUU - Bloomberg Barclays US Aggregate Bond Index
@@ -30,7 +32,7 @@ weights = np.full((4, 1), 0.25, dtype=float)
 returns['portfolio'] = np.dot(returns, weights)
 
 df = returns['portfolio'].to_frame()
-
+df.to_csv("portfolio_returns.csv")
 # Visualize data
 
 import plotly.graph_objects as go
